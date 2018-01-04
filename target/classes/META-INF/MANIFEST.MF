@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Atlassian-Build-Date: 2018-01-04T09:50:52+0200
+Atlassian-Plugin-Key: ro.etss.jira.plugin.tutorial.JiraPluginTutorial
+Bnd-LastModified: 1515052254620
+Build-Jdk: 1.8.0_151
+Built-By: laurozaur
+Bundle-Description: This is the ro.etss.jira.plugin.tutorial:JiraPluginT
+ utorial plugin for Atlassian JIRA.
+Bundle-DocURL: http://www.euro-testing.com/
+Bundle-ManifestVersion: 2
+Bundle-Name: JiraPluginTutorial
+Bundle-SymbolicName: ro.etss.jira.plugin.tutorial.JiraPluginTutorial
+Bundle-Vendor: ETSS
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: ro.etss.jira.plugin.tutorial.main.api;version="1.0.0"
+Import-Package: org.springframework.osgi.context;resolution:=optional,or
+ g.springframework.osgi.service.exporter.support;resolution:=optional,or
+ g.springframework.osgi.service.importer.support;resolution:=optional,or
+ g.eclipse.gemini.blueprint.context;resolution:=optional,org.eclipse.gem
+ ini.blueprint.service.exporter;resolution:=optional,org.eclipse.gemini.
+ blueprint.service.exporter.support;resolution:=optional,org.eclipse.gem
+ ini.blueprint.service.importer.support;resolution:=optional,com.atlassi
+ an.jira.component,com.atlassian.jira.issue,com.atlassian.jira.issue.fie
+ lds,com.atlassian.jira.issue.fields.layout.field,com.atlassian.jira.iss
+ ue.util,com.atlassian.jira.plugin.workflow,com.atlassian.jira.project,c
+ om.atlassian.jira.security,com.atlassian.jira.security.roles,com.atlass
+ ian.jira.user,com.atlassian.jira.user.util,com.atlassian.jira.util.coll
+ ect,com.atlassian.jira.workflow.condition,com.atlassian.jira.workflow.f
+ unction.issue,com.atlassian.plugin.osgi.factory,com.atlassian.sal.api,c
+ om.google.common.base,com.google.common.collect,com.opensymphony.module
+ .propertyset,com.opensymphony.workflow,com.opensymphony.workflow.loader
+ ,javax.annotation,javax.inject,org.apache.commons.lang,org.apache.commo
+ ns.logging,org.osgi.framework,org.slf4j,org.springframework.aop.support
+ ,org.springframework.beans,org.springframework.beans.factory,org.spring
+ framework.beans.factory.annotation,org.springframework.beans.factory.co
+ nfig,org.springframework.beans.factory.parsing,org.springframework.bean
+ s.factory.support,org.springframework.beans.factory.xml,org.springframe
+ work.context.annotation,org.springframework.core.io,org.springframework
+ .stereotype,org.springframework.util,org.w3c.dom,ro.etss.jira.plugin.tu
+ torial.main.api
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Spring-Context: *
+Tool: Bnd-2.4.1.201501161923

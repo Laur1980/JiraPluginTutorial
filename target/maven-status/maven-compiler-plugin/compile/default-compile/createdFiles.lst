@@ -1,0 +1,9 @@
+ro/etss/jira/plugin/tutorial/jira/workflow/ProjectRoleCondition.class
+ro/etss/jira/plugin/tutorial/jira/util/Utilitaries.class
+ro/etss/jira/plugin/tutorial/main/api/MyPluginComponent.class
+ro/etss/jira/plugin/tutorial/jira/workflow/WorkFlowFieldValueValidatorFactory.class
+ro/etss/jira/plugin/tutorial/main/impl/MyPluginComponentImpl.class
+ro/etss/jira/plugin/tutorial/jira/workflow/ProjectRoleConditionFactory.class
+ro/etss/jira/plugin/tutorial/jira/workflow/WorkFlowFieldValueValidator.class
+ro/etss/jira/plugin/tutorial/jira/workflow/SetUserCFFunction.class
+ro/etss/jira/plugin/tutorial/jira/workflow/SetUserCFFunctionFactory.class

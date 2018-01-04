@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    <param name="plugin-icon">images/pluginIcon.png</param>
+    <param name="plugin-logo">images/pluginLogo.png</param>
+  </plugin-info>
+  <!-- add our i18n resource -->
+  <resource type="i18n" name="i18n" location="JiraPluginTutorial"/>
+  <!-- add our web resources -->
+  <web-resource key="JiraPluginTutorial-resources" name="JiraPluginTutorial Web Resources">
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+    <resource type="download" name="JiraPluginTutorial.css" location="/css/JiraPluginTutorial.css"/>
+    <resource type="download" name="JiraPluginTutorial.js" location="/js/JiraPluginTutorial.js"/>
+    <resource type="download" name="images/" location="/images"/>
+    <context>JiraPluginTutorial</context>
+  </web-resource>
+  <!-- Workflow Project Role condition -->
+  <workflow-condition key="project-role-condition" name="Project Role Condition" i18n-name-key="project-role-condition.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.ProjectRoleConditionFactory">
+    <description key="project-role-condition.description">Workflow condition based on project roles!x</description>
+    <condition-class>ro.etss.jira.plugin.tutorial.jira.workflow.ProjectRoleCondition</condition-class>
+    <resource type="velocity" name="view" location="templates/conditions/project-role-condition.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/conditions/project-role-condition-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/conditions/project-role-condition-input.vm"/>
+  </workflow-condition>
+  <!-- Workflow Field Value Validator -->
+  <workflow-validator key="work-flow-field-value-validator" name="Work Flow Field Value Not Null Validator" i18n-name-key="work-flow-field-value-validator.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.WorkFlowFieldValueValidatorFactory">
+    <description key="work-flow-field-value-validator.description">The module validates if a field has a null value or not!</description>
+    <validator-class>ro.etss.jira.plugin.tutorial.jira.workflow.WorkFlowFieldValueValidator</validator-class>
+    <resource type="velocity" name="view" location="templates/validators/work-flow-field-value-validator.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/validators/work-flow-field-value-validator-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/validators/work-flow-field-value-validator-input.vm"/>
+  </workflow-validator>
+  <!-- Workflow Post Function that sets a user onto a CustomField -->
+  <workflow-function key="set-user-cf-function" name="Set User CF Function" i18n-name-key="set-user-cf-function.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.SetUserCFFunctionFactory">
+    <description key="set-user-cf-function.description">Workflow post function that sets the user in a chosen custom field </description>
+    <function-class>ro.etss.jira.plugin.tutorial.jira.workflow.SetUserCFFunction</function-class>
+    <resource type="velocity" name="view" location="templates/postfunctions/set-user-cf-function.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/set-user-cf-function-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/set-user-cf-function-input.vm"/>
+  </workflow-function>
+</atlassian-plugin>
