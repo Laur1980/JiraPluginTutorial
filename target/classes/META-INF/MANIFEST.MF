@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Atlassian-Build-Date: 2018-01-04T09:50:52+0200
+Atlassian-Build-Date: 2018-01-04T14:35:23+0200
 Atlassian-Plugin-Key: ro.etss.jira.plugin.tutorial.JiraPluginTutorial
-Bnd-LastModified: 1515052254620
+Bnd-LastModified: 1515069324952
 Build-Jdk: 1.8.0_151
 Built-By: laurozaur
 Bundle-Description: This is the ro.etss.jira.plugin.tutorial:JiraPluginT
@@ -21,24 +21,26 @@ Import-Package: org.springframework.osgi.context;resolution:=optional,or
  ini.blueprint.service.exporter;resolution:=optional,org.eclipse.gemini.
  blueprint.service.exporter.support;resolution:=optional,org.eclipse.gem
  ini.blueprint.service.importer.support;resolution:=optional,com.atlassi
- an.jira.component,com.atlassian.jira.issue,com.atlassian.jira.issue.fie
- lds,com.atlassian.jira.issue.fields.layout.field,com.atlassian.jira.iss
- ue.util,com.atlassian.jira.plugin.workflow,com.atlassian.jira.project,c
- om.atlassian.jira.security,com.atlassian.jira.security.roles,com.atlass
- ian.jira.user,com.atlassian.jira.user.util,com.atlassian.jira.util.coll
- ect,com.atlassian.jira.workflow.condition,com.atlassian.jira.workflow.f
- unction.issue,com.atlassian.plugin.osgi.factory,com.atlassian.sal.api,c
- om.google.common.base,com.google.common.collect,com.opensymphony.module
- .propertyset,com.opensymphony.workflow,com.opensymphony.workflow.loader
- ,javax.annotation,javax.inject,org.apache.commons.lang,org.apache.commo
- ns.logging,org.osgi.framework,org.slf4j,org.springframework.aop.support
- ,org.springframework.beans,org.springframework.beans.factory,org.spring
- framework.beans.factory.annotation,org.springframework.beans.factory.co
- nfig,org.springframework.beans.factory.parsing,org.springframework.bean
- s.factory.support,org.springframework.beans.factory.xml,org.springframe
- work.context.annotation,org.springframework.core.io,org.springframework
- .stereotype,org.springframework.util,org.w3c.dom,ro.etss.jira.plugin.tu
- torial.main.api
+ an.jira.component,com.atlassian.jira.issue,com.atlassian.jira.issue.cus
+ tomfields.impl,com.atlassian.jira.issue.customfields.manager,com.atlass
+ ian.jira.issue.customfields.persistence,com.atlassian.jira.issue.fields
+ ,com.atlassian.jira.issue.fields.layout.field,com.atlassian.jira.issue.
+ util,com.atlassian.jira.plugin.workflow,com.atlassian.jira.project,com.
+ atlassian.jira.security,com.atlassian.jira.security.roles,com.atlassian
+ .jira.user,com.atlassian.jira.user.util,com.atlassian.jira.util.collect
+ ,com.atlassian.jira.workflow.condition,com.atlassian.jira.workflow.func
+ tion.issue,com.atlassian.plugin.osgi.factory,com.atlassian.sal.api,com.
+ google.common.base,com.google.common.collect,com.opensymphony.module.pr
+ opertyset,com.opensymphony.workflow,com.opensymphony.workflow.loader,ja
+ vax.annotation,javax.inject,org.apache.commons.lang,org.apache.commons.
+ logging,org.osgi.framework,org.slf4j,org.springframework.aop.support,or
+ g.springframework.beans,org.springframework.beans.factory,org.springfra
+ mework.beans.factory.annotation,org.springframework.beans.factory.confi
+ g,org.springframework.beans.factory.parsing,org.springframework.beans.f
+ actory.support,org.springframework.beans.factory.xml,org.springframewor
+ k.context.annotation,org.springframework.core.io,org.springframework.st
+ ereotype,org.springframework.util,org.w3c.dom,ro.etss.jira.plugin.tutor
+ ial.main.api
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
 Spring-Context: *
 Tool: Bnd-2.4.1.201501161923

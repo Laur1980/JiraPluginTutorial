@@ -1,9 +1,10 @@
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/util/Utilities.java
 /home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/workflow/SetUserCFFunction.java
 /home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/workflow/ProjectRoleConditionFactory.java
 /home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/workflow/SetUserCFFunctionFactory.java
-/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/util/Utilitaries.java
 /home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/main/api/MyPluginComponent.java
 /home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/workflow/WorkFlowFieldValueValidator.java
 /home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/workflow/WorkFlowFieldValueValidatorFactory.java
 /home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/workflow/ProjectRoleCondition.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/jira/customfields/CurrencyCF.java
 /home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/main/java/ro/etss/jira/plugin/tutorial/main/impl/MyPluginComponentImpl.java

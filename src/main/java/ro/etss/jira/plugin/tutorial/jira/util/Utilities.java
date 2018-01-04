@@ -1,8 +1,8 @@
 package ro.etss.jira.plugin.tutorial.jira.util;
 
-public final class Utilitaries {
+public final class Utilities{
 	
-	private Utilitaries() {}
+	private Utilities() {}
 	
 	public static boolean isNumber(String n) {
 		for(char c: n.toCharArray()) {
