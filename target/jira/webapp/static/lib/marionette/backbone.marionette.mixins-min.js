@@ -1,0 +1,1 @@
+define("jira/marionette/marionette.mixins",[],function(){"use strict";return{viewExtensions:{unwrapTemplate:function(){if(this.$el.parent().length){var e=this.$el.children();this.$el.replaceWith(e),this.setElement(e)}else this.setElement(this.$el.children())}}}});

@@ -1,0 +1,1 @@
+define("jira/viewissue/watchers-voters/views/watchers-read-only-view",["require"],function(e){var s=e("jira/viewissue/watchers-voters/views/abstract-watchers-view"),r=JIRA.Templates.Issue;return s.extend({_render:function(){this.$el.html(r.usersListReadOnly({users:this.collection.toJSON()}))}})});

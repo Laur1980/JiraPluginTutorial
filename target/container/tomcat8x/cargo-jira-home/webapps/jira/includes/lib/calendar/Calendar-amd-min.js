@@ -1,0 +1,1 @@
+define("jira/libs/calendar",["require"],function(a){"use strict";var e=window.Calendar;return a("jira/libs/calendar-layerable-mixin").layerableExtensions(e),e}),function(){"use strict";var a=require("jira/libs/calendar");AJS.namespace("window.Calendar",window,a)}();

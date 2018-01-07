@@ -1,0 +1,1 @@
+require("jira/admin/init/avatar-picker-trigger");

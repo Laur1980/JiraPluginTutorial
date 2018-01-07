@@ -26,7 +26,6 @@ public class SetUserCFFunctionFactory extends AbstractWorkflowPluginFactory impl
     @Override
     protected void getVelocityParamsForInput(Map<String, Object> velocityParams) {
     	velocityParams.put(USER_NAME, CURRENT_USER);
-
     }
 
     @Override

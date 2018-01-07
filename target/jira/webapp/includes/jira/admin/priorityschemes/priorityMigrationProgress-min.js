@@ -1,0 +1,1 @@
+require(["jquery"],function(r){"use strict";r(function(){var i=r(".aui-progress-indicator").data("progress")||0;AJS.progressBars.update("#priority-migration-progress",i)})});

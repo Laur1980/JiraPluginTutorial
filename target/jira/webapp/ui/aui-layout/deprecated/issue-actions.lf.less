@@ -1,0 +1,10 @@
+@import "../../imports/jira-colours-lookandfeel";
+
+// Stepped Progress - mainly used for Bulk Edit/Move/etc
+.steps {
+    > li { // prevents nested steppers from inheriting bold on current step // doesn't work in IE
+        &:before {
+            background-color: @jira-color-link;
+        }
+    }
+}

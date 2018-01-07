@@ -1,0 +1,1 @@
+require(["jquery","jira/tabs/tab-manager","jira/dashboard/dashboards-table"],function(a,i,t){"use strict";a(function(){i.navigationTabs.init({customInit:t.init,tabParam:"view"})})});

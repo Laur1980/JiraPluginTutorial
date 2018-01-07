@@ -1,0 +1,1 @@
+require(["jquery"],function(e){e(document).on("click",".workflow-mapping-issue-type",function(){e(this).toggleClass("collapsed")})});

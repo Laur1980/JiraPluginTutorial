@@ -1,0 +1,1 @@
+!function(r,u){"use strict";r(function(){u.triggerFocus()})}(require("jquery"),require("jira/focus/set-focus"));

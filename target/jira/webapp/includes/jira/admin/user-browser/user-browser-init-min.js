@@ -1,0 +1,1 @@
+require(["jira/admin/user-browser","jquery","jira/admin/user-browser/user-created"],function(e,r){r(function(){e.initToggleLists(),e.initNewUsersTip("#invite_user","#create_user")})});

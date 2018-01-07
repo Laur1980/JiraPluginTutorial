@@ -1,0 +1,1 @@
+define("jira/admin/group-browser/group-label-lozenge",["jquery","jira/skate"],function(e,t){t("group-label-lozenge",{type:t.type.CLASSNAME,attached:function(t){e(t).tooltip({gravity:"w",html:!0})}})});

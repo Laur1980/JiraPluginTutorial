@@ -1,0 +1,236 @@
+//
+// These styles were extracted from the JIRA Mobile plugin,
+// which were in turn lifted from the Indra (now Atlassian Accounts)
+// login page.
+// One day, we'll stop copy-pasting our code and share
+// them across our applications and services.
+// One glorious day...
+//
+@import "../../../../ui/imports/mixins/border-box";
+@import "../../../../ui/imports/jira-colours";
+
+.page-type-login #content {
+    padding: 0 20px;
+    text-align: center;
+}
+
+.page-type-login .aui-page-panel {
+    .border-box();
+    border: 1px solid @aui-border-color;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 50px auto 0;
+    padding: 40px;
+    text-align: left;
+}
+
+.page-type-login .aui-page-panel-inner,
+.page-type-login .aui-page-panel-content {
+    padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .page-type-login {
+        // Don't show AUI flags; they will ruin the screens.
+        #aui-flag-container,
+        .aui-flag {
+            display: none;
+        }
+
+        // There are no dialogs important enough to warrant making the login pages not work
+        .aui-dialog,
+        .jira-dialog,
+        #atlwdg-container {
+            .border-box();
+            bottom: 0;
+            max-height: calc(e("100% - 100px"));
+            position: fixed;
+            margin: 0 !important; // override inline styles
+            left: 0;
+            right: 0;
+            top: 40px;
+            width: auto !important; // override inline styles
+        }
+    }
+}
+
+.jira-login-method {
+    margin: 20px 0 0;
+    width: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .page-type-login {
+        min-width: unset;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    @panel-width: 300px;
+
+    // Unset the widths as set by AUI Page Layout
+    // See https://docs.atlassian.com/aui/latest/docs/page.html
+    .page-type-login,
+    .page-type-login .aui-page-header,
+    .page-type-login #footer,
+    .page-type-login #footer .footer-body {
+        width: auto !important;
+    }
+
+    .page-type-login {
+        // Hide things which aren't designed to work on mobile
+        #header #quicksearch-menu,
+        #header #create-menu,
+        #project_template_create_link,
+        #keyshortscuthelp,
+        #view_about,
+        #view_credits {
+            display: none;
+        }
+    }
+
+    .page-type-login #content {
+        padding: 0;
+    }
+
+    .page-type-login .aui-page-panel {
+        margin: 20px auto 0;
+        padding: 20px;
+        width: @panel-width !important;
+    }
+
+    .page-type-login .aui-message.aui-message {
+        @message-band-width: 30px;
+        padding: 10px;
+        padding-left: @message-band-width + 10px;
+
+        &::before {
+            width: @message-band-width;
+        }
+        &::after {
+            left: 7px;
+        }
+    }
+
+    .jira-login-method > .jira-login-item {
+        display: block;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .page-type-login form.aui {
+        .field-group,
+        .group,
+        .buttons-container {
+            padding-left: 0;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .group > legend,
+        .field-group > label {
+            display: block;
+            float: none;
+            margin-left: 0;
+            padding: 0 0 4px;
+            text-align: inherit;
+            width: auto;
+        }
+
+        .group > legend {
+            top: 8px;
+        }
+
+        .group > legend + .matrix {
+            padding-top: 0;
+        }
+
+        .icon-required {
+            position: static;
+            margin-left: 0.2em; // decent breathing space that's based on font size
+        }
+
+        .medium-field {
+            max-width: none;
+        }
+    }
+
+    #footer,
+    #footer .footer-body {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: @panel-width !important;
+    }
+
+    #footer {
+        float: none;
+        margin: 0 auto;
+
+        .footer-body > ul > li {
+            display: block;
+            white-space: normal;
+
+            &::after {
+                display: none;
+            }
+
+            + li {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    #footer-build-information {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .page-type-login #header .aui-header-primary .aui-nav {
+        // hide everything except for the instance logo
+        display: none;
+    }
+
+    .page-type-login #header .aui-header-secondary .aui-nav li {
+        display: none;
+
+        &#system-help-menu,
+        &#user-options {
+            display: list-item;
+        }
+    }
+
+    .page-type-login #content {
+        padding: 0;
+    }
+
+    .page-type-login .aui-page-panel {
+        .border-box();
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-radius: 0;
+        display: block;
+        margin: 0;
+        width: 100% !important;
+    }
+
+    .jira-login-method {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .jira-login-method > .jira-login-item {
+        display: block;
+        width: 100%;
+    }
+}
+
+// Prevent Android from showing the annoying extra text input
+.page-type-login input {
+    -webkit-user-modify: read-write-plaintext-only;
+}

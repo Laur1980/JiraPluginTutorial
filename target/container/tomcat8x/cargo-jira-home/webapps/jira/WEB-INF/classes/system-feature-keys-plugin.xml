@@ -1,0 +1,12 @@
+<atlassian-plugin name='JIRA Feature Keys' key='jira.feature.keys' i18n-name-key="feature.keys.plugin.name">
+    <plugin-info>
+        <description key="feature.keys.plugin.desc">This plugin registers feature keys supplied by JIRA.</description>
+        <vendor name="Atlassian" url="http://www.atlassian.com"/>
+        <application-version min="7.0"/>
+        <version>1.0</version>
+    </plugin-info>
+
+    <featureflags key="jira.feature.flags.registry" class="com.atlassian.jira.JiraFeatureFlagRegistrar"/>
+    <featureflags-activator key="jira.feature.flags.activator" class="com.atlassian.jira.config.feature.BuildNumberFeatureFlagActivator"/>
+    <featureflags key="com.atlassian.jira.upgrade.startup.fix.index.flag.key" class="com.atlassian.jira.index.LuceneCorruptionChecker" />
+</atlassian-plugin>

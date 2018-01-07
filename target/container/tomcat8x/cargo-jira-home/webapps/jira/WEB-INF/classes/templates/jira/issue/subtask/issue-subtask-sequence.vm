@@ -1,0 +1,5 @@
+#if($isDone)
+<div rel="$actualSequence" class="subtask-done">${displaySequence}.</div>
+#else
+<div rel="$actualSequence">${displaySequence}.</div>
+#end

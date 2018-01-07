@@ -1,0 +1,1 @@
+jQuery.browser.msie&&jQuery.browser.version>7&&"undefined"!=typeof JSON&&(JSON.stringify=null);

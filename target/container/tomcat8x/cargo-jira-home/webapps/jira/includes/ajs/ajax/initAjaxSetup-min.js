@@ -1,0 +1,1 @@
+!function(){require("jquery").ajaxSetup({timeout:6e4,async:!0,cache:!1,global:!0})}();

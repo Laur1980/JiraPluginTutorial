@@ -1,0 +1,1 @@
+define("jira/analytics",["underscore"],function(e){"use strict";function n(n){n=n||{},n.properties=e.extend({},n.data,n.properties),t.EventQueue.push(n),e.isFunction(AJS.trigger)&&AJS.trigger("jiraAnalyticsEvent",n)}var t=function(){return window.AJS||(window.AJS={}),window.AJS}();return t.EventQueue=t.EventQueue||[],{send:n}});

@@ -1,0 +1,1 @@
+define("jira/polyfill/escapeCSSSelector",[],function(){function e(e){return(e+"").replace(n,r)}var n=/([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g,r=function(e,n){return n?"\0"===e?"�":e.slice(0,-1)+"\\"+e.charCodeAt(e.length-1).toString(16)+" ":"\\"+e};return e});

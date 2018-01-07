@@ -66,7 +66,7 @@ public class ProjectRoleConditionFactory extends AbstractWorkflowPluginFactory i
 		return projectRole;
 	}
 
-	protected void getVelocityParamsForView(Map velocityParams, AbstractDescriptor descriptor)
+	protected void getVelocityParamsForView(Map<String, Object> velocityParams, AbstractDescriptor descriptor)
     {
         if (!(descriptor instanceof ConditionDescriptor))
             throw new IllegalArgumentException("Descriptor must be a ConditionDescriptor.");
@@ -77,7 +77,7 @@ public class ProjectRoleConditionFactory extends AbstractWorkflowPluginFactory i
     public Map<String, String> getDescriptorParams(Map<String, Object> conditionParams)
     {
         if(conditionParams!=null && conditionParams.containsKey(ROLE)) 
-        	MapBuilder.build(ROLE, extractSingleParam(conditionParams,ROLE));
+        	return MapBuilder.build(ROLE, extractSingleParam(conditionParams,ROLE));
         return MapBuilder.emptyMap();
     }
     

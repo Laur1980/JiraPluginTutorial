@@ -1,0 +1,1 @@
+define("jira/backbone/backbone-paginator",["backbone","underscore","atlassian/libs/factories/backbone.paginator-2.0.2"],function(a,e,n){return n(e,a)}),AJS.namespace("Backbone.PageableCollection",null,require("jira/backbone/backbone-paginator"));

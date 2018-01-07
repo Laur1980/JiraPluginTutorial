@@ -1,0 +1,22 @@
+<!-- usage marker -->
+<div class="subtask-reorder">
+    #if ($allowedReorderSubTasks)
+        #if ($displaySequence != 1)
+            <a href="${contextPath}/secure/MoveIssueLink.jspa?id=${parentIssue.id}&currentSubTaskSequence=${subtaskSequence}&subTaskSequence=${previousSequence}"
+               title="${subtaskReorderMoveUpTitle}"><span
+                    class="icon-default aui-icon aui-icon-small aui-iconfont-up">$subtaskReorderMoveUpText</span></a>
+        #else
+            <img src="${contextPath}/images/border/spacer.gif" class="sortArrow" alt="" />
+        #end
+
+        #if ($displaySequence != $subTasksSize)
+            <a href="${contextPath}/secure/MoveIssueLink.jspa?id=${parentIssue.id}&currentSubTaskSequence=${subtaskSequence}&subTaskSequence=${nextSequence}"
+               title="${subtaskReorderMoveDownTitle}"><span
+                    class="icon-default aui-icon aui-icon-small aui-iconfont-down">$subtaskReorderMoveDownText</span></a>
+        #else
+            <img src="${contextPath}/images/border/spacer.gif" class="sortArrow" alt="" />
+        #end
+    #else
+        &nbsp;
+    #end
+</div>

@@ -1,0 +1,37 @@
+@import "../../../../ui/imports/aui-colours";
+
+#configure-priority-scheme-form {
+
+    #select-priorities {
+        margin-top: 30px;
+        + p {
+            color: @aui-color-mid;
+        }
+
+    }
+
+    #optionsContainer {
+        margin-bottom: 20px;
+        .ab-drag-container p {
+            margin-top: -2px; // #optionsContainer has a 7px passing. This is to get 5px spacing
+            margin-bottom: 5px;
+        }
+    }
+
+    #default-priority-select {
+        margin-bottom: 10px;
+    }
+
+    .break-line::after {
+        content: "\a";
+        white-space: pre;
+    }
+
+    .lowercase {
+        text-transform: lowercase;
+    }
+
+    .sentence-case::first-letter {
+        text-transform: capitalize;
+    }
+}

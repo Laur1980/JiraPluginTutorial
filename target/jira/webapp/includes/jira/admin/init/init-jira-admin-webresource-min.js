@@ -1,0 +1,1 @@
+require("jira/admin/init/admin");

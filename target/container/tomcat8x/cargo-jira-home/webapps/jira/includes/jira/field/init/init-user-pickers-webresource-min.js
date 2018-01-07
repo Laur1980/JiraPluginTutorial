@@ -1,0 +1,1 @@
+require("jira/field/init-multi-user-pickers"),require("jira/field/init-single-user-pickers");

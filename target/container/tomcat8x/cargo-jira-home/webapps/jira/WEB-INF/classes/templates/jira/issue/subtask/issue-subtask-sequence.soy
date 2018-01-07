@@ -1,0 +1,14 @@
+{namespace JIRA.Templates.Issue.Subtask}
+
+/**
+ * Prints sequence number of subtask in page
+ * @param displaySequence sequence number of subtask
+ * @param isDone if subtask marked as resolved
+ */
+{template .sequence}
+    {if $isDone}
+        <div rel="{$displaySequence}" class="subtask-done">{$displaySequence}.</div>
+    {else}
+        <div rel="{$displaySequence}">{$displaySequence}.</div>
+    {/if}
+{/template}
