@@ -1,1 +1,0 @@
-define("jira/issuenavigator/issue-navigator/shortcuts",["jira/issues/search/legacyissuenavigatorshortcuts"],function(s){return s}),AJS.namespace("jira.app.issuenavigator.shortcuts",null,require("jira/issuenavigator/issue-navigator/shortcuts")),AJS.namespace("JIRA.IssueNavigator.Shortcuts",null,require("jira/issuenavigator/issue-navigator/shortcuts"));

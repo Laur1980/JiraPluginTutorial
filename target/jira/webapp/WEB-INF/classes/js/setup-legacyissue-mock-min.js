@@ -1,1 +1,0 @@
-define("jira/issues/search/legacyissue",{}),define("jira/issues/search/legacyissuenavigator",{}),define("jira/issues/search/legacyissuenavigatorshortcuts",{});

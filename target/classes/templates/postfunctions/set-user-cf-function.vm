@@ -1,3 +1,0 @@
-#if($user)
-	The <b>Test User</b> Custom Field will be set with the value:<b> $user </b> !
-#end

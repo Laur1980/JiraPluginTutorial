@@ -1,1 +1,0 @@
-define("jira/admin/application/defaults/api",["marionette"],function(e){"use strict";return new(e.Controller.extend({EVENT_ON_SHOW:"show"}))});

@@ -1,4 +1,0 @@
-#disable_html_escaping()
-#if ($priority)
-  #if($priorityNotAvailable) $i18n.getText("priority.edit.priority.not.available.in.scheme", $textutils.htmlEncode($priority.getNameTranslation())) #else $textutils.htmlEncode($priority.getNameTranslation()) #end
-#end

@@ -1,1 +1,0 @@
-require(["jira/dialog/init-generic-dialogs","jira/dialog/init-dashboard-dialogs","jira/dialog/init-non-dashboard-dialogs","jira/dialog/init-workflow-transition-dialogs","jira/dialog/init-dialog-behaviour","jquery"],function(i,a,n,o,t,r){"use strict";r(function(){i.init(),a.init(),n.init(),o.init(),t.init()})});

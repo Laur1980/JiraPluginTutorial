@@ -1,1 +1,0 @@
-define("jira/project/browse/projectcollection",["jira/backbone/backbone-paginator","jira/project/browse/projectmodel"],function(e,i){"use strict";return e.extend({model:i,initialize:function(e,i){this.originalCollection=e,this.categories=i.categories}})});

@@ -1,1 +1,0 @@
-define("jira/project/permissions/permissiongroupmodel",["backbone"],function(e){"use strict";return e.Model.extend({defaults:{heading:"",permissions:[]}})});

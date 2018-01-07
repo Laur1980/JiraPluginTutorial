@@ -1,1 +1,0 @@
-!function(){var e=require("jira/skate");require("jira/bigpipe/element");for(var i=document.querySelectorAll("big-pipe"),r=0,t=i.length;r<t;r++)e.init(i[r])}();

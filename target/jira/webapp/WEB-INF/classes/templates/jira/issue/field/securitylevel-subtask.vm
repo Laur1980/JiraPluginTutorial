@@ -1,4 +1,0 @@
-#disable_html_escaping()
-#customControlHeader ($action $field.id $i18n.getText($field.nameKey) $fieldLayoutItem.required $displayParameters $auiparams)
-$i18n.getText($infoMessageKey)
-#customControlFooter ($action $field.id $fieldLayoutItem.getFieldDescription() $displayParameters $auiparams)

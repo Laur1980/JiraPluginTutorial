@@ -1,1 +1,0 @@
-define("jira/project/edit/project-category-field",["jquery","jira/ajs/select/single-select","backbone","aui/inline-dialog2"],function(e,i,t){return t.View.extend({initialize:function(){var t=this.$el.find("#project-category-selector");this.projectCategorySingleSelect=new i({element:e(t),revertOnInvalid:!0,uneditable:"disabled"===e(t).attr("disabled")})}})});

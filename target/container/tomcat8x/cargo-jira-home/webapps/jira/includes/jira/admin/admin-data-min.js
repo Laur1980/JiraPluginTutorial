@@ -1,1 +1,0 @@
-define("jira/admin/admindata",["wrm/data"],function(i){"use strict";var n=i.claim("jira.webresources:jira-admin-data.data");return{isUserAdmin:function(){return n.isAdmin},isUserSysAdmin:function(){return n.isSysAdmin}}});

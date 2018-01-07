@@ -1,1 +1,0 @@
-define("jira/viewissue/element/image-wrap",["jira/fileviewer","jira/skate","jira/featureflags/feature-manager","underscore"],function(e,a,i,t){i.isFeatureEnabled("jira.fileviewer.disabled")||a("file-preview-type",{type:a.type.ATTRIBUTE,attached:t.debounce(function(){e.attachToElements()},0),detached:function(){e.closeViewer()}})});

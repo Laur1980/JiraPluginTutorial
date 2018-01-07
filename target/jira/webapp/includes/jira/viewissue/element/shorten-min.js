@@ -1,1 +1,0 @@
-define("jira/viewissue/element/shorten",["jira/ajs/shorten/shortener","jira/skate"],function(e,t){return t("shorten",{type:t.type.CLASSNAME,attached:function(t){var n={};n.element=t,new e(n)}})});

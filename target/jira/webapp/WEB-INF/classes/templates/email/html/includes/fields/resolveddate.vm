@@ -1,7 +1,0 @@
-#disable_html_escaping()
-#if ($issue.getResolutionDate())
-<tr>
-    <th>#text("issue.field.resolution.date"):</th>
-    <td>$datetimeformatter.withStyle("COMPLETE").format($issue.getResolutionDate())</td>
-</tr>
-#end

@@ -1,1 +1,0 @@
-define("jira/util/urls",["exports"],function(t){"use strict";t.atl_token=function(){var t=document.getElementById("atlassian-token");return t&&t.getAttribute?t.getAttribute("content"):void 0}});

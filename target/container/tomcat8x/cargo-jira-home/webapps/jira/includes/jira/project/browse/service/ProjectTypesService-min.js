@@ -1,1 +1,0 @@
-define("jira/project/browse/projecttypesservice",function(){"use strict";return{init:function(e){this.projectTypes=e},areProjectTypesEnabled:function(){return!!this.projectTypes},getProjectTypeIcon:function(e){if(this.projectTypes){return(this.projectTypes[e]||this.projectTypes["jira-project-type-inaccessible"]).icon}return null}}});

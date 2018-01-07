@@ -1,3 +1,0 @@
-#disable_html_escaping()
-$i18n.getText("admin.workflow.function.reindexissue.view")
-

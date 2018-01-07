@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: ut.ro.etss.jira.plugin.tutorial.jira.workflow.WorkFlowFieldValueValidatorTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0 sec

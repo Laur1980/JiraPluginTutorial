@@ -1,1 +1,0 @@
-!function(){var s=require("jquery"),a=require("jira/analytics");s(function(){var u=s(".bulk-group").length;if(u>0){var t=s(".subtask-to-issue").length,e=s(".issue-to-subtask").length,i=s(".subtask-to-subtask").length;a.send({name:"jira.bulk.move.page.confirmation.groups",data:{all:u,subtaskToIssue:t,issueToSubtask:e,subtaskToSubtask:i}})}})}();

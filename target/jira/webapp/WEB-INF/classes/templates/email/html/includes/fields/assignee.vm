@@ -1,5 +1,0 @@
-#disable_html_escaping()
-<tr>
-    <th>#text("issue.field.assignee"):</th>
-    <td>#authorlinkkey($issue.assigneeId $linkstyle)</td>
-</tr>

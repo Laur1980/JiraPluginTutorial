@@ -1,1 +1,0 @@
-define("jira/ajs/layer/layer-interactions",["exports"],function(e){"use strict";var n={};n.preventDialogHide=[],n.preventInputBlur=[],n.preventInlineEditCancel=[],n.hideBeforeDialogShown=[];for(var r in n){if(!n.hasOwnProperty(r))return;!function(r){e[r]=function(e){return e&&-1===n[r].indexOf(e)&&n[r].push(e),n[r]}}(r)}});

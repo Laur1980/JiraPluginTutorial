@@ -1,3 +1,0 @@
-#disable_html_escaping()
-
-#genericChangelogMailWithComment("jira.email.title.issue.reopened")
