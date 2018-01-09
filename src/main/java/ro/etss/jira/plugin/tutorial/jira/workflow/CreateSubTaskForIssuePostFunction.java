@@ -56,16 +56,23 @@ public class CreateSubTaskForIssuePostFunction extends AbstractJiraFunctionProvi
     {
 		log.info("Inside PF CreateSubTaskForIssuePostFunction");
         MutableIssue parentIssue = getIssue(transientVars);
-//        Integer count = null;
-//        try {
-//        	count = Integer.parseInt((String)args.get(COUNT));
-//        }catch(NumberFormatException e) {
-//        	log.error(e.getMessage());
-//        	throw new WorkflowException("This should be a numeric value! We have: "+(String)args.get(COUNT));
-//        }
-//        if(count == null)
-//        	return;
-        ConstantsManager constantsManager = ComponentAccessor.getConstantsManager();
+        Integer count = null;
+        try {
+        	count = Integer.parseInt((String)args.get(COUNT));
+        }catch(NumberFormatException e) {
+        	log.error(e.getMessage());
+        	throw new WorkflowException("This should be a numeric value! We have: "+(String)args.get(COUNT));
+        }
+        
+        if(count != null) {
+        	for(int i=0;i<count;i++) {
+        		createSubtask(parentIssue);
+        	}
+        }
+    }
+
+	private void createSubtask(MutableIssue parentIssue) {
+		ConstantsManager constantsManager = ComponentAccessor.getConstantsManager();
         String issueTypeId = getIssueTypeId(constantsManager, "Sub-task");
         //PF stops for a closed issue or if it is a subtask or subtask issue type is non-existent
        if(IssueFieldConstants.CLOSED_STATUS_ID == Integer.parseInt(parentIssue.getStatus().getId()) || parentIssue.isSubTask()
@@ -106,15 +113,9 @@ public class CreateSubTaskForIssuePostFunction extends AbstractJiraFunctionProvi
 		} catch (CreateException e) {
 			log.error(e.getMessage());
 			e.printStackTrace();
-		}
-        /*
-		}catch(IndexException e) {
-			log.error(e.getMessage());
-			e.printStackTrace();
-		}
-		*/
+		}      
         log.info("SubTask "+subTask+" finalized for current issue: "+parentIssue);
-    }
+	}
 	
 	private void addErrorsToLog(Collection<String> errors) {
 		errors.forEach(m -> log.error("Error creating parameters for subtask: "+m));
