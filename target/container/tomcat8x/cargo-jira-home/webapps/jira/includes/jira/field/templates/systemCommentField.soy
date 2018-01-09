@@ -1,0 +1,15 @@
+{namespace JIRA.Templates.Fields.SystemCommentField}
+
+
+/**
+ * Renders comment buttons used with rich text editor.
+ *
+ * @param submitAccessKey
+ * @param cancelAccessKey
+ * @param submitTitle
+ * @param cancelTitle
+ */
+{template .commentButtons}
+    <input accesskey="{$submitAccessKey}" class="aui-button aui-button-light" id="issue-comment-add-submit" name="Add" title="{$submitTitle}" type="submit" value="{getText('common.forms.add')}">
+    <a accesskey="{$cancelAccessKey}" class="aui-button aui-button-link cancel" href="#" id="issue-comment-add-cancel" title="{$cancelTitle}">{getText('common.forms.cancel')}</a>
+{/template}

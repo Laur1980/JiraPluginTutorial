@@ -1,0 +1,1 @@
+!function(e){AJS.namespace("JIRA.Users.LoggedInUser.userName",null,e.username),AJS.namespace("JIRA.Users.LoggedInUser.isAnonymous",null,e.isAnonymous)}(require("jira/util/users/logged-in-user"));

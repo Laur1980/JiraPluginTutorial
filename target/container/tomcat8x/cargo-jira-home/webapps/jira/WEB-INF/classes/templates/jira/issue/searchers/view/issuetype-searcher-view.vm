@@ -1,0 +1,15 @@
+#disable_html_escaping()
+#if ($selectedOptions)
+    #searcherHeaderNoField ("type" ${i18n.getText('navigator.filter.issuetype')})
+
+    #foreach ($option in $selectedOptions)
+        #if ($validOptionIds.contains($option.id))
+            $textutils.htmlEncode($option.name, false)#commaonly($selectedOptions)
+        #else
+            <span class="invalid_sel" #searchContextDescriptionTitleProjectOrGeneral('navigator.filter.issuetype', $option.name, $contextProjectNames)>$textutils.htmlEncode($option.name, false)</span>#commaonly($selectedOptions)
+        #end
+    #end
+
+    #searcherFooter ($searcher)
+#end
+

@@ -1,0 +1,1 @@
+define("jira-credits-contributor-blob",["require"],function(r){"use strict";for(var e=r("jira-credits-raw-users"),a=r("jira-credits-raw-coords"),t={},i=0;i<a.length;i++){var s=e[i]||["???","???"+i,"<a href='https://www.atlassian.com/company/careers/' target='_blank'>We're hiring! (A lot)</a>"];t[s[0]]={name:s[0],role:s[2],x:a[i][1],y:a[i][2]}}return t});

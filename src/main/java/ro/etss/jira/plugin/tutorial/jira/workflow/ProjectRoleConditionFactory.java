@@ -53,8 +53,8 @@ public class ProjectRoleConditionFactory extends AbstractWorkflowPluginFactory i
 	private ProjectRole getRole(AbstractDescriptor descriptor) {
 		if (!(descriptor instanceof ConditionDescriptor))
             throw new IllegalArgumentException("Descriptor must be a ConditionDescriptor.");
-		ConditionDescriptor functionDescriptor = (ConditionDescriptor) descriptor;
-		String role = (String) functionDescriptor.getArgs().get(ROLE);
+		ConditionDescriptor conditionDescriptor = (ConditionDescriptor) descriptor;
+		String role = (String) conditionDescriptor.getArgs().get(ROLE);
 		if(role != null && role.trim().length()>0)
 			return getProjectRole(role);
 		else 

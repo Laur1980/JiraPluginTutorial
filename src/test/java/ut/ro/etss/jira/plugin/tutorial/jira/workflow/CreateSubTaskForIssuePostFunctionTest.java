@@ -12,6 +12,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.atlassian.jira.bc.issue.IssueService;
+import com.atlassian.jira.config.SubTaskManager;
 import com.atlassian.jira.issue.MutableIssue;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 
@@ -24,13 +26,18 @@ public class CreateSubTaskForIssuePostFunctionTest
     private CreateSubTaskForIssuePostFunction function;
     private MutableIssue issue;
     private JiraAuthenticationContext jiraContext;
+    private  SubTaskManager subtaskManager;
+    private  IssueService issueService;
+   
     @Before
     public void setup() {
         issue = mock(MutableIssue.class);
         jiraContext = mock(JiraAuthenticationContext.class);
+        subtaskManager = mock(SubTaskManager.class);
+        issueService = mock(IssueService.class);
         when(issue.getDescription()).thenReturn("");
 
-        function = new CreateSubTaskForIssuePostFunction(jiraContext) {
+        function = new CreateSubTaskForIssuePostFunction(jiraContext,subtaskManager,issueService) {
             protected MutableIssue getIssue(Map transientVars) {
                 return issue;
             }

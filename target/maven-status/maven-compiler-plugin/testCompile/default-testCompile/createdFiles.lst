@@ -1,0 +1,16 @@
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/ProjectRoleConditionTest.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/ParrentIssueBlockingConditionTest$1.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/SetUserCFFunctionTest.class
+it/ro/etss/jira/plugin/tutorial/main/MyComponentWiredTest.class
+ut/ro/etss/jira/plugin/tutorial/jira/customfields/CurrencyCFTest.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/DummyPFTest$1.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/CreateSubTaskForIssuePostFunctionTest.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/WorkFlowFieldValueValidatorTest.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/CloseParentIssuePostFunctionTest$1.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/ParrentIssueBlockingConditionTest.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/SetUserCFFunctionTest$1.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/DummyPFTest.class
+ut/ro/etss/jira/plugin/tutorial/main/MyComponentUnitTest.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/ProjectRoleConditionTest$1.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/CloseParentIssuePostFunctionTest.class
+ut/ro/etss/jira/plugin/tutorial/jira/workflow/CreateSubTaskForIssuePostFunctionTest$1.class

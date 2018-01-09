@@ -1,0 +1,1 @@
+require(["jira/dropdown/element/default-dropdown","jira/dropdown/element/issue-actions-trigger","jira/dropdown/dropdown-factory","jquery"],function(o,d,n,r){r(function(){n.bindNavigatorOptionsDds(),n.bindConfigDashboardDds()})});

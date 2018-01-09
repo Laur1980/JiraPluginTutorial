@@ -1,0 +1,68 @@
+{namespace JIRA.Templates.Admin.PrioritySchemesForPriority}
+
+/**
+ * View priority schemes for priority
+ * @param errorMessages
+ * @param schemes
+ * @param title
+ */
+{template .view}
+<html>
+<head>
+	<title>{$title}</title>
+    <meta name="admin.active.section" content="admin_issues_menu/priorities_section"/>
+    <meta name="admin.active.tab" content="priorities"/>
+</head>
+<body>
+
+{call JIRA.Templates.JiraDialog.dialogTitle}
+    {param titleText: $title /}
+{/call}
+
+{let $displayErrors: $errorMessages and length($errorMessages) != 0 /}
+
+
+<div class="priority-schemes-container
+    {if $displayErrors}{sp}priority-schemes-container--warning{/if}
+    ">
+
+{if $displayErrors}
+    {call aui.message.error}
+        {param content}
+            {if length($errorMessages) == 1}
+                {$errorMessages[0]}
+            {else}
+                <ul>
+                    {foreach $message in $errorMessages}
+                        <li>{$message}</li>
+                    {/foreach}
+                </ul>
+            {/if}
+        {/param}
+    {/call}
+{else}
+    <table class="aui">
+
+    <thead>
+        <tr>
+            <th>{getText('admin.issuesettings.priorities.view.priority.schemes.priority.scheme')}</th>
+        </tr>
+    </thead>
+
+    {foreach $scheme in $schemes}
+        <tr>
+            <td>
+                <a class="priority-scheme-edit-link" href="{contextPath()}/secure/admin/EditPriorityScheme!default.jspa?schemeId={$scheme.id}">{$scheme.name}</a></td>
+            </tr>
+    {/foreach}
+
+    </table>
+{/if}
+</div>
+
+
+</body>
+</html>
+
+
+{/template}

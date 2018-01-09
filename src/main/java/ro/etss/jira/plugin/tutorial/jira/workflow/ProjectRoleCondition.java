@@ -31,10 +31,13 @@ public class ProjectRoleCondition extends AbstractJiraCondition
 	public boolean passesCondition(Map transientVars, Map args, PropertySet ps)
     {
         Issue issue = getIssue(transientVars);
+        log.info("Retrieving the current issue: "+issue.getKey());
         ApplicationUser user = getCallerUser(transientVars, args);
+        log.info("Retrieving the current loggedin user: "+user.getDisplayName());
         Project project = issue.getProjectObject();
-        String description = issue.getDescription();
+        log.info("Retrieving the current project: "+project.getKey());
         String role = (String) args.get(ROLE);
+        log.info("Retrieving the current project role: "+role);
         Long roleId = new Long(role);
         return projectRoleManager.isUserInProjectRole(user, projectRoleManager.getProjectRole(roleId), project);
     }

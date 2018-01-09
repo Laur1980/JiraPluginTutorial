@@ -1,0 +1,20 @@
+<atlassian-plugin name='View Project Operations Sections' key='jira.webfragments.view.project.operations' i18n-name-key="webfragments.view.project.operations.plugin.name">
+    <plugin-info>
+        <description key="webfragments.view.project.operations.plugin.desc">This library includes the web fragments for the project operation links on the 'view project' page</description>
+        <vendor name="Atlassian" url="http://www.atlassian.com"/>
+        <application-version min="3.7" max="4.3"/>
+        <version>1.0</version>
+    </plugin-info>
+
+    <web-item key="edit_project" name="Edit Project Details" section="atl.jira.proj.config/projectgroup1" i18n-name-key="webfragments.view.project.operations.item.edit.project.name"  weight="11">
+        <label key="admin.projects.details" />
+        <link linkId="edit_project">/secure/project/EditProject!default.jspa?pid=$helper.project.id</link>
+        <condition class="com.atlassian.jira.plugin.webfragment.conditions.HasSelectedProjectCondition" />
+        <conditions type="OR">
+            <condition class="com.atlassian.jira.plugin.webfragment.conditions.UserIsAdminCondition" />
+            <condition class="com.atlassian.jira.plugin.webfragment.conditions.HasProjectPermissionCondition">
+                <param name="permission">project</param>
+            </condition>
+        </conditions>
+    </web-item>
+</atlassian-plugin>

@@ -1,0 +1,17 @@
+@import "../../jira-colours-lookandfeel";
+
+.dropdown-item-style(normal) {
+    color: @jira-dropdown-menuitem-text-color;
+}
+
+.dropdown-item-style(focus) {
+    background-color: @jira-dropdown-menuitem-background-focus-color;
+    color: @jira-dropdown-menuitem-text-focus-color;
+}
+
+.dropdown-item-style(disabled) { // does nothing in L&F terms; let the static styles shine through!
+}
+
+.dropdown-heading() {
+    color: @jira-dropdown-heading-color;
+}

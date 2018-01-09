@@ -1,0 +1,1 @@
+require(["require"],function(e){"use strict";var o=e("jquery"),i=e("jira/dialog/form-dialog"),r=e("jira/util/urls");o(function(){var e=JIRA.loggingLevels;new i({trigger:"#add-custom-logger-link",id:"add-custom-loger-dialog",width:560,content:function(i){var l=JIRA.Templates.Logging.loggerForm({availableLevels:e,atlToken:r.atl_token()});i(o(l))},autoClose:!0})})});

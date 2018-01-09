@@ -1,0 +1,19 @@
+{namespace JIRA.Templates.Issue.Field.Priority}
+
+/**
+ * @param description
+ */
+{template .editDescription}
+    {let $notAvailableInScheme: getText('priority.edit.description.priority.not.available.in.scheme') /}
+    {let $delimiter: $description ? '<br />' : ''/}
+    {call .invalidPriorityHtmlMessage}
+        {param text: $notAvailableInScheme/}
+    {/call} {$notAvailableInScheme}{$delimiter|noAutoescape}{$description}
+{/template}
+
+/**
+* @param text
+*/
+{template .invalidPriorityHtmlMessage private="true"}
+<span class="aui-icon aui-icon-small aui-iconfont-error" original-title="{$text}">{$text}</span>
+{/template}

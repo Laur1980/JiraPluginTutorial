@@ -1,0 +1,1 @@
+require("jira/field/init-status-pickers");

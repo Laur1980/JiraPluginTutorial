@@ -1,0 +1,24 @@
+// Most of the layout styles should be managed by AUI,
+// but we need to add a few in the short-term until markup changes are made for 6.0.
+@import "../imports/jira-colours-lookandfeel";
+
+// Page navigation styles
+// TODO JRADEV-13452 - Remove once we use AUI's vertical navigation component
+// --------------------
+#content {
+
+    .nav-item-style {
+        color: @jira-pagenav-menuitem-text-color;
+    }
+
+    .nav-item-focus-style { // .aui-nav-vertical > li > a:focus
+        color: @jira-pagenav-menuitem-text-focus-color;
+    }
+
+    .nav-item-active-style { // .aui-nav-vertical > li > a:active
+        background: @jira-pagenav-menuitem-background-active-color;
+        color: @jira-pagenav-menuitem-text-active-color;
+    }
+
+    // ...and now the styles!
+}

@@ -65,13 +65,14 @@
   </workflow-function>
   <!-- Create SubTask For Current Issue PostFunction-->
   <workflow-function key="create-sub-task-for-issue-post-function" name="Create Sub Task For Issue Post Function" i18n-name-key="create-sub-task-for-issue-post-function.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.CreateSubTaskForIssuePostFunctionFactory">
-    <description key="create-sub-task-for-issue-post-function.description">The Create Sub Task For Current Issue Post Function In progress </description>
+    <description key="create-sub-task-for-issue-post-function.description">It creates a Subtask issue for current transitioning issue!</description>
     <function-class>ro.etss.jira.plugin.tutorial.jira.workflow.CreateSubTaskForIssuePostFunction</function-class>
+    <orderable>true</orderable>
+    <unique>false</unique>
+    <deletable>true</deletable>
     <resource type="velocity" name="view" location="templates/postfunctions/create-sub-task-for-issue-post-function.vm"/>
-    <!-- 
     <resource type="velocity" name="input-parameters" location="templates/postfunctions/create-sub-task-for-issue-post-function-input.vm"/>
     <resource type="velocity" name="edit-parameters" location="templates/postfunctions/create-sub-task-for-issue-post-function-input.vm"/>
-     -->
   </workflow-function>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Post Functions ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Custom Fields +++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -82,4 +83,11 @@
     <resource name="edit" type="velocity" location="/templates/customfields/currency-cf/edit.vm"/>
   </customfield-type>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Custom Fields ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <workflow-function key="dummy-pf" name="Dummy PF" i18n-name-key="dummy-pf.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.DummyPFFactory">
+    <description key="dummy-pf.description">The Dummy PF Plugin</description>
+    <function-class>ro.etss.jira.plugin.tutorial.jira.workflow.DummyPF</function-class>
+    <resource type="velocity" name="view" location="templates/postfunctions/dummy-pf.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/dummy-pf-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/dummy-pf-input.vm"/>
+  </workflow-function>
 </atlassian-plugin>

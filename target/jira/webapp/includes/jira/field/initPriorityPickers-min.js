@@ -1,0 +1,1 @@
+define("jira/field/init-priority-pickers",["jira/ajs/select/single-select","jira/util/events/reasons","jira/util/events/types","jira/util/events"],function(e,i,n,t){function r(i){i.find("select#priority").each(function(i,n){new e({element:n,revertOnInvalid:!0})})}t.bind(n.NEW_CONTENT_ADDED,function(e,n,t){t!==i.panelRefreshed&&r(n)})});

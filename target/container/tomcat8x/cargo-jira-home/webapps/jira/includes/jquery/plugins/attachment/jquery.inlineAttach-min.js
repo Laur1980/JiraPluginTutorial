@@ -1,0 +1,1 @@
+define("jira/jquery/plugins/attachment/inline-attach",["jira/attachment/inline-attach","jquery"],function(n,t){return t.fn.inlineAttach=function(){var t=[];return this.each(function(){t.push(new n(this))}),t},t.fn.inlineAttach}),function(){require("jira/jquery/plugins/attachment/inline-attach")}();

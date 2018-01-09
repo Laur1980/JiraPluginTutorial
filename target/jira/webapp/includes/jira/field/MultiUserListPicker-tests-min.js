@@ -1,0 +1,1 @@
+AJS.test.require(["jira.webresources:jira-fields","jira.webresources:jira-global"],function(){var e=require("jira/field/multi-user-list-picker");module("JIRA.MultiUserListPicker",{setup:function(){this.sandbox=sinon.sandbox.create();jQuery("#qunit-fixture")},teardown:function(){this.sandbox.restore()}}),test("Is correctly declared in AMD",function(){ok(e,"Is AMDifyed")})});

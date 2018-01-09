@@ -36,17 +36,35 @@ import com.opensymphony.workflow.WorkflowException;
 public class CreateSubTaskForIssuePostFunction extends AbstractJiraFunctionProvider
 {
     private static final Logger log = LoggerFactory.getLogger(CreateSubTaskForIssuePostFunction.class);
+    private static final String COUNT ="count";
+    
     @ComponentImport
     private final JiraAuthenticationContext jiraContext;
+    @ComponentImport
+    private final SubTaskManager subtaskManager;
+    @ComponentImport
+    private final IssueService issueService;
    
-	public CreateSubTaskForIssuePostFunction(JiraAuthenticationContext jiraContext) {
+	public CreateSubTaskForIssuePostFunction(JiraAuthenticationContext jiraContext, SubTaskManager subtaskManager,
+			IssueService issueService) {
 		this.jiraContext = jiraContext;
+		this.subtaskManager = subtaskManager;
+		this.issueService = issueService;
 	}
 
 	public void execute(Map transientVars, Map args, PropertySet ps) throws WorkflowException
     {
 		log.info("Inside PF CreateSubTaskForIssuePostFunction");
         MutableIssue parentIssue = getIssue(transientVars);
+//        Integer count = null;
+//        try {
+//        	count = Integer.parseInt((String)args.get(COUNT));
+//        }catch(NumberFormatException e) {
+//        	log.error(e.getMessage());
+//        	throw new WorkflowException("This should be a numeric value! We have: "+(String)args.get(COUNT));
+//        }
+//        if(count == null)
+//        	return;
         ConstantsManager constantsManager = ComponentAccessor.getConstantsManager();
         String issueTypeId = getIssueTypeId(constantsManager, "Sub-task");
         //PF stops for a closed issue or if it is a subtask or subtask issue type is non-existent
@@ -55,26 +73,29 @@ public class CreateSubTaskForIssuePostFunction extends AbstractJiraFunctionProvi
         	log.error("Can not create subtask issue!");
         	return;
         } 
+//      IssueFactory issueFactory = ComponentAccessor.getIssueFactory();
+//	    IssueIndexingService indexing = (IssueIndexingService) ComponentAccessor.getComponent(IssueIndexingService.class);
+       	
        	ApplicationUser user = jiraContext.getLoggedInUser();
-        SubTaskManager subtaskManager = ComponentAccessor.getSubTaskManager();
-        IssueFactory issueFactory = ComponentAccessor.getIssueFactory();
-        IssueService issueService = ComponentAccessor.getIssueService();
-        //IssueIndexingService indexing = (IssueIndexingService) ComponentAccessor.getComponent(IssueIndexingService.class);
+//      SubTaskManager subtaskManager = ComponentAccessor.getSubTaskManager();  
+//      IssueService issueService = ComponentAccessor.getIssueService();
+        
         //Adding subtask input parameters
         IssueInputParameters subtaskInputParameters = issueService.newIssueInputParameters();
         subtaskInputParameters.setReporterId(parentIssue.getReporterId());
         subtaskInputParameters.setSummary("SubTask issue created for parent issue "+parentIssue.getSummary());
         subtaskInputParameters.setIssueTypeId(issueTypeId);
         subtaskInputParameters.setProjectId(parentIssue.getProjectId());
+        
         CreateValidationResult validationResult = issueService.validateSubTaskCreate(user, parentIssue.getId(),subtaskInputParameters);
         if(!validationResult.isValid()) {        	
-        	addErrorsToLog(validationResult);
+        	addErrorsToLog(validationResult.getErrorCollection().getErrorMessages());
         	return;
         }
        
         IssueResult issueResult = issueService.create(user,validationResult);
         if(!issueResult.isValid()) {
-        	addErrorsToLog(issueResult);
+        	addErrorsToLog(issueResult.getErrorCollection().getErrorMessages());
         	return;
         }
         
@@ -92,19 +113,13 @@ public class CreateSubTaskForIssuePostFunction extends AbstractJiraFunctionProvi
 			e.printStackTrace();
 		}
 		*/
-        log.info("SubTask finalized for current issue: "+subTask);
+        log.info("SubTask "+subTask+" finalized for current issue: "+parentIssue);
     }
 	
-	private void addErrorsToLog(CreateValidationResult validationResult) {
-		Collection<String> errors = validationResult.getErrorCollection().getErrorMessages();
+	private void addErrorsToLog(Collection<String> errors) {
 		errors.forEach(m -> log.error("Error creating parameters for subtask: "+m));
 	}
-	
-	private void addErrorsToLog(IssueResult issueResult) {
-		Collection<String> errors = issueResult.getErrorCollection().getErrorMessages();
-		errors.forEach(m -> log.error("Error creating IssueResult object for subtask: "+m));
-	}
-	
+			
 	private String getIssueTypeId(ConstantsManager constantsManager, String issueName) {
 		Collection<IssueType> issueTypes = constantsManager.getAllIssueTypeObjects();
 		for(IssueType it: issueTypes) {

@@ -1,0 +1,228 @@
+{namespace JIRA.Templates.Admin.PrioritySchemes}
+
+/**
+ * View priority schemes page
+ * @param? globalErrors
+ * @param? prioritySchemes
+ * @param? priorities
+ * @param? actionedSchemeId
+ * @param? defaultPrioritySchemeId
+ * @param? defaultPrioritiesIds
+ * @param? anySDProject
+ */
+{template .viewPrioritySchemesPage}
+<html>
+<head>
+    <meta name="admin.active.section" content="admin_issues_menu/priorities_section"/>
+    <meta name="admin.active.tab" content="priority_schemes"/>
+	<title>{getText('admin.schemes.priority.view.priority.schemes')}</title>
+</head>
+<body>
+
+{call JIRA.Templates.Headers.pageHeader}
+    {param mainContent}
+        <h2>{getText('admin.schemes.priority.view.priority.schemes')}</h2>
+    {/param}
+    {param actionsContent}
+        <div class="aui-buttons">
+            <a id="add_priorityscheme" class="aui-button" href="AddPriorityScheme!default.jspa">
+                {getText('admin.schemes.priority.add.priority.scheme')}
+            </a>
+        </div>
+    {/param}
+    {param helpContent}
+        {call JIRA.Templates.Links.helpLink}
+            {param isLocal: false/}
+            {param url: getJiraHelpUrl('priority_schemes') /}
+            {param title: getJiraHelpTitle('priority_schemes') /}
+        {/call}
+    {/param}
+{/call}
+
+{if $anySDProject}
+    {call JIRA.Templates.Admin.PrioritySchemes.SDProjectsWarning.anySDProjectsWarning /}
+{/if}
+
+<div class="jira-global-messages">
+    {call .globalMessages data="all" /}
+</div>
+
+{if $prioritySchemes}
+<table id="priority-schemes-table" class="aui">
+    <thead>
+    <tr>
+        <th>
+            {getText('common.words.name')}
+        </th>
+        <th>
+            {getText('common.concepts.priorities')}
+        </th>
+        <th>
+            {getText('common.concepts.projects')}
+        </th>
+        <th>
+            {getText('common.words.actions')}
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $priorityScheme in $prioritySchemes}
+        {let $schemeId}{$priorityScheme.id}{/let}
+        {let $isDefault: $defaultPrioritySchemeId and $defaultPrioritySchemeId == $schemeId /}
+
+        <tr data-id="{$schemeId}" {if $actionedSchemeId == $schemeId}class="rowHighlighted"{/if}>
+            <td>
+                <strong data-scheme-field="name">{$priorityScheme.name}</strong>
+                {if $priorityScheme.description}
+                    <div class="description secondary-text">{$priorityScheme.description}</div>
+                {/if}
+            </td>
+
+            <td>
+                {if $priorities and $priorities[$schemeId] and length($priorities[$schemeId])}
+                    <ul class="imagebacked">
+                    {foreach $priority in $priorities[$schemeId]}
+                        <li>
+                            <img src="{$priority.completeIconUrl ? $priority.completeIconUrl : ''}" class="priority-icon icon jira-icon-image" height="16" width="16" alt="{$priority.name}" title="">
+                            <span class="priority-name">{$priority.name}</span>
+                            {if $defaultPrioritiesIds and $defaultPrioritiesIds[$schemeId] and $defaultPrioritiesIds[$schemeId] == $priority.id}
+                                <span class="priority-default">({getText('admin.common.words.default')})</span>
+                            {/if}
+                        </li>
+                    {/foreach}
+                    </ul>
+                {else}
+                    <span class="errorText">{getText('admin.schemes.priority.no.priorities.associated')}</span>
+                {/if}
+            </td>
+
+            <td>
+            {if $isDefault}
+                    <span class="priority-scheme-global">{getText('admin.issuesettings.global')}</span>
+            {elseif $priorityScheme.associatedProjectObjects and length($priorityScheme.associatedProjectObjects)}
+                <ul>
+                {foreach $project in $priorityScheme.associatedProjectObjects}
+                    <li>
+                        <a href="{contextPath()}/plugins/servlet/project-config/{$project.key}/summary" data-project-key="{$project.key}">
+                            {$project.name}
+                        </a>
+                    </li>
+                {/foreach}
+                </ul>
+            {else}
+                <span class="errorText">{getText('admin.issuesettings.no.project')}</span>
+            {/if}
+            </td>
+
+            <td class="cell-type-collapsed">
+                <ul class="operations-list">
+                    {if $isDefault}
+                        <li><a id="associate_{$schemeId}" href="AssociatePriorityScheme!default.jspa?schemeId={$schemeId}">{getText('admin.projects.schemes.associate')}</a></li>
+                    {else}
+                        <li><a id="edit_{$schemeId}" href="EditPriorityScheme!default.jspa?schemeId={$schemeId}">{getText('common.words.edit')}</a></li>
+                        <li><a id="associate_{$schemeId}" href="AssociatePriorityScheme!default.jspa?schemeId={$schemeId}">{getText('admin.projects.schemes.associate')}</a></li>
+                    {/if}
+                    {if not $isDefault}
+                    <li>
+                        <button id="scheme-{$schemeId}-options-trigger" aria-owns="scheme-{$schemeId}-options" aria-haspopup="true" aria-controls="scheme-{$schemeId}-options"
+                                class="aui-dropdown2-trigger aui-dropdown2-trigger-arrowless aui-style-default aui-button aui-button-subtle">
+                            <span class="ghx-iconfont aui-icon aui-icon-small aui-iconfont-more ghx-clickable"></span>
+                        </button>
+                        <div class="aui-dropdown2 aui-style-default" id="scheme-{$schemeId}-options">
+                            <ul class="aui-dropdown2-section">
+                                <li><a id="delete_{$schemeId}" class="trigger-dialog" href="DeletePriorityScheme!input.jspa?schemeId={$schemeId}">{getText('common.words.delete')}</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {/if}
+                </ul>
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+{/if}
+</body>
+{/template}
+
+
+/**
+ * View priority schemes page
+ * @param? xsrfToken
+ * @param? priorityScheme
+ * @param? prioritySchemeProjects
+ */
+{template .deletePrioritySchemePage}
+    <html>
+    <head>
+        <meta name="admin.active.section" content="admin_issues_menu/priorities_section"/>
+        <meta name="admin.active.tab" content="priority_schemes"/>
+        <title>{getText('admin.schemes.priority.delete.priority.scheme')}</title>
+    </head>
+    <body>
+
+    {call JIRA.Templates.Headers.pageHeader}
+        {param mainContent}
+        <h2>{getText('admin.schemes.priority.delete.priority.scheme')}</h2>
+        {/param}
+    {/call}
+
+    <div class="jira-global-messages">
+        {call .globalMessages data="all" /}
+    </div>
+
+    {call aui.form.form}
+        {param action: 'DeletePriorityScheme.jspa' /}
+        {param content}
+            {let $schemeName}<b class="priority-scheme-name">{$priorityScheme.name}</b>{/let}
+
+            <div class="form-body">
+                {getText('admin.schemes.priority.delete.confirm',$schemeName)|noAutoescape}
+
+                {if length($prioritySchemeProjects)}
+                    <br /><br />
+                    {getText('admin.schemes.priority.delete.confirm.assigned', length($prioritySchemeProjects))}
+                {/if}
+
+                <input type="hidden" name="schemeId" value="{$priorityScheme.id}"/>
+                <input type="hidden" name="atl_token" value="{$xsrfToken}" />
+            </div>
+
+            {call aui.form.buttons}
+                {param extraClasses: 'form-footer'/}
+                {param content}
+                    {call aui.buttons.button}
+                        {param id: 'dialog-confirm-button'/}
+                        {param type: 'primary'/}
+                        {param text: getText('admin.common.words.delete')/}
+                    {/call}
+                    {call aui.buttons.button}
+                        {param id: 'dialog-cancel-button'/}
+                        {param extraClasses: 'cancel'/}
+                        {param type: 'link'/}
+                        {param text: getText('admin.common.words.cancel')/}
+                    {/call}
+                {/param}
+            {/call}
+        {/param}
+    {/call}
+
+    </body>
+{/template}
+
+/**
+ * Render global AUI messages
+ *
+ * @param? globalErrors
+ */
+{template .globalMessages}
+    {if $globalErrors and length($globalErrors)}
+        {call aui.message.error}
+            {param content}
+                {foreach $error in $globalErrors}
+                    <p class="jira-global-message-paragraph">{$error|noAutoescape}</p>
+                {/foreach}
+            {/param}
+        {/call}
+    {/if}
+{/template}

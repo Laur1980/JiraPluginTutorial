@@ -1,0 +1,19 @@
+{namespace JIRA.Dashboard.page}
+
+/**
+ * Represents the Dashboard view
+ * The Page Content is being rendered by the Action class: com.atlassian.jira.web.action.Dashboard and pasted without escaping as-is as a content.
+ * @param dashboardTitle
+ * @param dashboardHtml
+ */
+{template .dashboard}
+<html>
+    <head>
+        <title>{$dashboardTitle}</title>
+        <content tag="section">home_link</content>
+    </head>
+    <body class="page-type-dashboard">
+        {$dashboardHtml|noAutoescape}
+    </body>
+</html>
+{/template}

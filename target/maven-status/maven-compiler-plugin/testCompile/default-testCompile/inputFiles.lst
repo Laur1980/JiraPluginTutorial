@@ -1,0 +1,10 @@
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/jira/workflow/ParrentIssueBlockingConditionTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/jira/customfields/CurrencyCFTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/jira/workflow/ProjectRoleConditionTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/it/ro/etss/jira/plugin/tutorial/main/MyComponentWiredTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/jira/workflow/SetUserCFFunctionTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/jira/workflow/WorkFlowFieldValueValidatorTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/jira/workflow/CreateSubTaskForIssuePostFunctionTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/main/MyComponentUnitTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/jira/workflow/CloseParentIssuePostFunctionTest.java
+/home/laurozaur/JIRA_PLUGINs/JiraPluginTutorial/src/test/java/ut/ro/etss/jira/plugin/tutorial/jira/workflow/DummyPFTest.java

@@ -1,16 +1,16 @@
 package ro.etss.jira.plugin.tutorial.jira.workflow;
 
+import java.util.Map;
+
 import com.atlassian.jira.plugin.workflow.AbstractWorkflowPluginFactory;
 import com.atlassian.jira.plugin.workflow.WorkflowPluginFunctionFactory;
+import com.atlassian.jira.util.collect.MapBuilder;
 import com.atlassian.jira.workflow.JiraWorkflow;
 import com.atlassian.jira.workflow.WorkflowManager;
-import com.opensymphony.workflow.loader.*;
-import webwork.action.ActionContext;
+import com.opensymphony.workflow.loader.AbstractDescriptor;
+import com.opensymphony.workflow.loader.FunctionDescriptor;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import webwork.action.ActionContext;
 
 /**
  * This is the factory class responsible for dealing with the UI for the post-function.
@@ -29,12 +29,6 @@ public class CloseParentIssuePostFunctionFactory extends AbstractWorkflowPluginF
 
     @Override
     protected void getVelocityParamsForInput(Map<String, Object> velocityParams) {
-        Map<String, String[]> myParams = ActionContext.getParameters();
-        final JiraWorkflow jiraWorkflow = workflowManager.getWorkflow(myParams.get("workflowName")[0]);
-
-        //the default message
-        velocityParams.put(FIELD_MESSAGE, "Workflow Last Edited By " + jiraWorkflow.getUpdateAuthorName());
-
     }
 
     @Override
@@ -50,24 +44,11 @@ public class CloseParentIssuePostFunctionFactory extends AbstractWorkflowPluginF
         }
 
         FunctionDescriptor functionDescriptor = (FunctionDescriptor)descriptor;
-        String message = (String)functionDescriptor.getArgs().get(FIELD_MESSAGE);
-
-        if (message == null) {
-            message = "No Message";
-        }
-
-        velocityParams.put(FIELD_MESSAGE,message);
     }
 
 
     public Map<String,?> getDescriptorParams(Map<String, Object> formParams) {
-        Map params = new HashMap();
-
-        // Process The map
-        String message = extractSingleParam(formParams,FIELD_MESSAGE);
-        params.put(FIELD_MESSAGE,message);
-
-        return params;
+        return MapBuilder.emptyMap();
     }
 
 }

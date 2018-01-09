@@ -1,5 +1,6 @@
 package ro.etss.jira.plugin.tutorial.jira.workflow;
 
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -59,7 +60,8 @@ public class SetUserCFFunction extends AbstractJiraFunctionProvider
         }
         log.info("User: "+user.getDisplayName());
         //Setting the user value to the custom field
-        CustomField cf = customFieldManager.getCustomFieldObjectByName("Test User");
+        List<CustomField> customFields = (List<CustomField>)customFieldManager.getCustomFieldObjectsByName("Test User");
+        CustomField cf = customFields.get(0);
         if(cf != null) {
         	setUserValue(issue,user,cf);
         }

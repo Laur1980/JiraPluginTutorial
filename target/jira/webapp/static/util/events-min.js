@@ -1,0 +1,1 @@
+define("jira/util/events",["jquery","exports"],function(n,i){"use strict";var t=n(document);i.bind=function(n,i,e){t.bind(n,i,e)},i.one=function(n,i){t.one(n,i)},i.unbind=function(n,i){t.unbind(n,i)},i.trigger=function(n,i){t.trigger(n,i)}});

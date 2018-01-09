@@ -1,0 +1,1 @@
+require(["jquery","jira/admin/group-browser/group-label-lozenge"],function(i){i(function(){i(".operations-list .aui-button[disabled]").tooltip({gravity:"e",html:!1})})});
