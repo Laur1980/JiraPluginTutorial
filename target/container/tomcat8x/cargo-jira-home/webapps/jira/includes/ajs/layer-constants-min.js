@@ -1,1 +1,0 @@
-define("jira/ajs/layer/layer-constants",["exports"],function(e){e.LEFT="left",e.RIGHT="right",e.ACTIVE_CLASS="active",e.BOX_SHADOW_CLASS="box-shadow",e.LOADING_CLASS="loading",e.INTELLIGENT_GUESS="Intelligent Guess"});

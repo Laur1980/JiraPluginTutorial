@@ -1,1 +1,0 @@
-jQuery.fn.setSelectionRange=function(e,t){if(0!=this.length)if(this[0].setSelectionRange)this[0].focus(),this[0].setSelectionRange(e,t);else if(this[0].createTextRange){var n=this[0].createTextRange();n.collapse(!0),n.moveEnd("character",t),n.moveStart("character",e),n.select()}},jQuery.fn.setCaretToPosition=function(e){this.setSelectionRange(e,e)};

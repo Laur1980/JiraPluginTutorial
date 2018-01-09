@@ -1,1 +1,0 @@
-define("jira/admin/user-browser/user-browser-flags",[],function(){return{whenFlagSet:function(e,n){if(window.location.hash==="#"+e){n();var a=location.pathname+location.search;window.history.replaceState&&window.history.replaceState(null,null,a)}}}});

@@ -1,1 +1,0 @@
-AJS.test.require(["jira.webresources:page-loading-indicator"],function(){var i=require("jira/loading/loading");module("Loading"),test("isVisible() correctly reflects the state",function(){ok(!i.isVisible()),i.showLoadingIndicator(),ok(i.isVisible()),i.hideLoadingIndicator()})});

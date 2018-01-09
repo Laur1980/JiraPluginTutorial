@@ -1,4 +1,0 @@
-#disable_html_escaping()
-<div class="message-container">
-    $message
-</div>

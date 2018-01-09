@@ -1,7 +1,0 @@
-<auditlogcleaningservice id="auditlogcleaningservice">
-    <description>
-        admin.service.auditing.auditlogcleaner.desc
-    </description>
-    <properties>
-    </properties>
-</auditlogcleaningservice>

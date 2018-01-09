@@ -1,6 +1,0 @@
-#disable_html_escaping()
-#if ($resolution)
-    $textutils.htmlEncode($resolution.getNameTranslation(), false)
-#else
-    <em>$i18n.getText('common.resolution.unresolved')</em>
-#end

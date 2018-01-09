@@ -1,4 +1,0 @@
-#disable_html_escaping()
-#if ($value)
-    $!numberTool.format($value)
-#end

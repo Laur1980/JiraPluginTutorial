@@ -1,1 +1,0 @@
-require(["jira/analytics/analytics"],function(n){AJS.toInit(function(){n.bindEvents()})});

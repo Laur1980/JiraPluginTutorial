@@ -1,5 +1,0 @@
-<popservice id="mailservice" run-mode="local">
-    <description>admin.service.mail</description>
-    <properties>
-    </properties>
-</popservice>

@@ -1,1 +1,0 @@
-require(["jquery"],function(e){"use strict";e(function(){var i=e("#show-remaining-projects, #hide-remaining-projects");i.on("click",function(n){n.preventDefault();var s="show-remaining-projects"!==this.id,t=e(this);t.addClass("hidden"),t.prevAll("ul.projects").find("li:gt(3)").toggleClass("hidden",s),i.not(this).removeClass("hidden")})})});

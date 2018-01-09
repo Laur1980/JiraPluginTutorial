@@ -1,1 +1,0 @@
-define("jira/util/elements",["jquery"],function(e){"use strict";return{elementIsFocused:function(t){return t&&e(t).get(0)===document.activeElement},consumesKeyboardEvents:function(t){var n=t instanceof e?t:e(t);return!n.is(":button")&&(n.is(":input")||n.is("[contentEditable]"))}}});

@@ -1,4 +1,0 @@
-#disable_html_escaping()
-#if ($resolution)
-  $textutils.htmlEncode($resolution.getNameTranslation())
-#end

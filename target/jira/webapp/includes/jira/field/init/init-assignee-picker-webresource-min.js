@@ -1,1 +1,0 @@
-require("jira/field/init-assignee-pickers");

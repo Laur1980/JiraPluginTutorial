@@ -1,2 +1,0 @@
-#disable_html_escaping()
-$textutils.htmlEncode($duration)

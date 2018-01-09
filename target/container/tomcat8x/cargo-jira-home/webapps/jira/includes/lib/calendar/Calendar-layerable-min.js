@@ -1,1 +1,0 @@
-define("jira/libs/calendar-layerable-mixin",["jira/ajs/layer/layer-interactions","jira/ajs/layer/inline-layer","jira/util/events"],function(e,n,i){"use strict";function r(r){e.preventDialogHide(r),e.preventInputBlur(r),e.preventInlineEditCancel(r),i.bind(n.EVENTS.beforeHide,function(e){r.current&&e.preventDefault()})}return{layerableExtensions:r}});

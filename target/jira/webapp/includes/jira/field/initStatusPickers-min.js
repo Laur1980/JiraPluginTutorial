@@ -1,1 +1,0 @@
-define("jira/field/init-status-pickers",["jira/util/events/reasons","jira/util/events/types","jira/util/events","jira/field/status-category-single-select"],function(e,t,i,n){function s(e){e.find("select#statusCategory").each(function(e,t){new n({element:t,revertOnInvalid:!0})})}i.bind(t.NEW_CONTENT_ADDED,function(t,i,n){n!==e.panelRefreshed&&s(i)})});

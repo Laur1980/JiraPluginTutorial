@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: ut.ro.etss.jira.plugin.tutorial.jira.workflow.CloseParentIssuePostFunctionTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.006 sec

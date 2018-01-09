@@ -1,4 +1,0 @@
-#disable_html_escaping()
-#if ($value)
-  $textutils.linkURL($!value.toString())
-#end

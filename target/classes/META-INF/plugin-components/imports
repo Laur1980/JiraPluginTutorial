@@ -1,9 +1,0 @@
-com.atlassian.jira.bc.issue.IssueService
-com.atlassian.jira.config.ConstantsManager
-com.atlassian.jira.config.SubTaskManager
-com.atlassian.jira.issue.CustomFieldManager
-com.atlassian.jira.security.JiraAuthenticationContext
-com.atlassian.jira.security.roles.ProjectRoleManager
-com.atlassian.jira.user.util.UserManager
-com.atlassian.jira.workflow.WorkflowManager
-com.atlassian.sal.api.ApplicationProperties

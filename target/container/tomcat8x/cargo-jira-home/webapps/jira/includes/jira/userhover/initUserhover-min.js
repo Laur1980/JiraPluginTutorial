@@ -1,1 +1,0 @@
-require(["jquery","jira/userhover/userhover"],function(e,i){"use strict";e(document).delegate(".user-hover[rel]",{mousemove:function(){i.show(this)},mouseleave:function(){i.hide(this)},click:function(){i.hide(this,-1)}})});

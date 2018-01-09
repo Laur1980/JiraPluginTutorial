@@ -1,2 +1,0 @@
-#disable_html_escaping()
-$!security.getString('name')

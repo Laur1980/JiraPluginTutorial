@@ -1,1 +1,0 @@
-define("jira/ajs/avatarpicker/gravatar-util",["jquery","exports"],function(a,r){r.showGravatarHelp=function(r){void 0!==r&&void 0!==r.entry&&(a(".gravatar-signup-text").addClass("hidden"),a(".gravatar-login-text").removeClass("hidden"))},r.displayGravatarHelp=function(){var t=a("#gravatar_json_url");t.length&&a.ajax(t.val(),{dataType:"jsonp",success:r.showGravatarHelp})}});
