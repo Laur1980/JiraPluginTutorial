@@ -1,8 +1,0 @@
-<tr>
-    <td class="fieldLabelArea">
-        UserName:
-    </td>
-    <td nowrap>
-        <input type="text" name="user" id="user" value="$!user" />
-    </td>
-</tr>

@@ -45,6 +45,11 @@
     <resource type="velocity" name="input-parameters" location="templates/validators/work-flow-field-value-validator-input.vm"/>
     <resource type="velocity" name="edit-parameters" location="templates/validators/work-flow-field-value-validator-input.vm"/>
   </workflow-validator>
+  <workflow-validator key="close-issue-workflow-validator" name="Close Issue Workflow Validator" i18n-name-key="close-issue-workflow-validator.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.CloseIssueWorkflowValidatorFactory">
+    <description key="close-issue-workflow-validator.description">The Close Issue Workflow Validator Plugin</description>
+    <validator-class>ro.etss.jira.plugin.tutorial.jira.workflow.CloseIssueWorkflowValidator</validator-class>
+    <resource type="velocity" name="view" location="templates/validators/close-issue-workflow-validator.vm"/>
+  </workflow-validator>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Validators ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Post Functions ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <!-- Workflow Post Function that sets a user onto a CustomField -->
@@ -74,6 +79,14 @@
     <resource type="velocity" name="input-parameters" location="templates/postfunctions/create-sub-task-for-issue-post-function-input.vm"/>
     <resource type="velocity" name="edit-parameters" location="templates/postfunctions/create-sub-task-for-issue-post-function-input.vm"/>
   </workflow-function>
+  <!-- Dummy PF -->
+   <workflow-function key="dummy-pf" name="Dummy PF" i18n-name-key="dummy-pf.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.DummyPFFactory">
+    <description key="dummy-pf.description">The Dummy PF Plugin</description>
+    <function-class>ro.etss.jira.plugin.tutorial.jira.workflow.DummyPF</function-class>
+    <resource type="velocity" name="view" location="templates/postfunctions/dummy-pf.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/dummy-pf-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/dummy-pf-input.vm"/>
+  </workflow-function>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Post Functions ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Custom Fields +++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <!-- Currency Custom Field -->
@@ -83,11 +96,6 @@
     <resource name="edit" type="velocity" location="/templates/customfields/currency-cf/edit.vm"/>
   </customfield-type>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Custom Fields ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-  <workflow-function key="dummy-pf" name="Dummy PF" i18n-name-key="dummy-pf.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.DummyPFFactory">
-    <description key="dummy-pf.description">The Dummy PF Plugin</description>
-    <function-class>ro.etss.jira.plugin.tutorial.jira.workflow.DummyPF</function-class>
-    <resource type="velocity" name="view" location="templates/postfunctions/dummy-pf.vm"/>
-    <resource type="velocity" name="input-parameters" location="templates/postfunctions/dummy-pf-input.vm"/>
-    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/dummy-pf-input.vm"/>
-  </workflow-function>
+
+  
 </atlassian-plugin>

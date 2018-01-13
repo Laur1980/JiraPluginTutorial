@@ -1,9 +1,0 @@
-
-<tr>
-    <td class="fieldLabelArea">
-        Number of subtasks:
-    </td>
-    <td nowrap>
-        <input name="count" id="count" value="$count"/>
-    </td>
-</tr>

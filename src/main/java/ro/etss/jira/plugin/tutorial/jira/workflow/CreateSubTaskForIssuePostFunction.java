@@ -36,17 +36,18 @@ import com.opensymphony.workflow.WorkflowException;
 public class CreateSubTaskForIssuePostFunction extends AbstractJiraFunctionProvider
 {
     private static final Logger log = LoggerFactory.getLogger(CreateSubTaskForIssuePostFunction.class);
-    private static final String COUNT ="count";
+    private final static String COUNT_OF_SUBTASKS="countOfsubtasks";
     
-    @ComponentImport
+    
     private final JiraAuthenticationContext jiraContext;
     @ComponentImport
     private final SubTaskManager subtaskManager;
     @ComponentImport
     private final IssueService issueService;
    
-	public CreateSubTaskForIssuePostFunction(JiraAuthenticationContext jiraContext, SubTaskManager subtaskManager,
-			IssueService issueService) {
+	public CreateSubTaskForIssuePostFunction(@ComponentImport JiraAuthenticationContext jiraContext, 
+											 @ComponentImport SubTaskManager subtaskManager,
+			                                 @ComponentImport IssueService issueService) {
 		this.jiraContext = jiraContext;
 		this.subtaskManager = subtaskManager;
 		this.issueService = issueService;
@@ -58,13 +59,13 @@ public class CreateSubTaskForIssuePostFunction extends AbstractJiraFunctionProvi
         MutableIssue parentIssue = getIssue(transientVars);
         Integer count = null;
         try {
-        	count = Integer.parseInt((String)args.get(COUNT));
+        	count = Integer.parseInt((String)args.get(COUNT_OF_SUBTASKS));
         }catch(NumberFormatException e) {
         	log.error(e.getMessage());
-        	throw new WorkflowException("This should be a numeric value! We have: "+(String)args.get(COUNT));
+        	throw new WorkflowException("This should be a numeric value! We have: "+(String)args.get(COUNT_OF_SUBTASKS));
         }
         
-        if(count != null) {
+        if(count != null && count >0 ) {
         	for(int i=0;i<count;i++) {
         		createSubtask(parentIssue);
         	}

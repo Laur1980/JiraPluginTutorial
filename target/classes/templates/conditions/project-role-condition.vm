@@ -1,5 +1,0 @@
-#if ($role)
-	User should have ${role.name} Role!
-#else
-	Role Not Defined!
-#end

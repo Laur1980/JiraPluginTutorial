@@ -4,6 +4,8 @@
         Number of subtasks:
     </td>
     <td nowrap>
-        <input name="count" id="count" value="$count"/>
+		<input type="text" name="countOfsubtasks" id="countOfsubtasks" #if($countOfsubtasks)
+														value="$countOfsubtasks"
+													#end/>   
     </td>
 </tr>
