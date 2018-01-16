@@ -79,23 +79,26 @@
     <resource type="velocity" name="input-parameters" location="templates/postfunctions/create-sub-task-for-issue-post-function-input.vm"/>
     <resource type="velocity" name="edit-parameters" location="templates/postfunctions/create-sub-task-for-issue-post-function-input.vm"/>
   </workflow-function>
-  <!-- Dummy PF -->
-   <workflow-function key="dummy-pf" name="Dummy PF" i18n-name-key="dummy-pf.name" class="ro.etss.jira.plugin.tutorial.jira.workflow.DummyPFFactory">
-    <description key="dummy-pf.description">The Dummy PF Plugin</description>
-    <function-class>ro.etss.jira.plugin.tutorial.jira.workflow.DummyPF</function-class>
-    <resource type="velocity" name="view" location="templates/postfunctions/dummy-pf.vm"/>
-    <resource type="velocity" name="input-parameters" location="templates/postfunctions/dummy-pf-input.vm"/>
-    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/dummy-pf-input.vm"/>
-  </workflow-function>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Post Functions ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Custom Fields +++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-  <!-- Currency Custom Field -->
+  <!-- Currency Custom Field 
   <customfield-type name="Currency CF" i18n-name-key="currency-cf.name" key="currency-cf" class="ro.etss.jira.plugin.tutorial.jira.customfields.CurrencyCF">
     <description key="currency-cf.description">The module shows currency in a custom field!</description>
     <resource name="view" type="velocity" location="/templates/customfields/currency-cf/view.vm"/>
     <resource name="edit" type="velocity" location="/templates/customfields/currency-cf/edit.vm"/>
+    <resource name="xml" type="velocity" location="/templates/customfields/currency-cf/view.vm"/>
+  </customfield-type>
+  -->i	
+  <!-- Administrator editable only CF -->
+   <customfield-type name="Admin Editable CF" i18n-name-key="admin-editable-cf.name" key="admin-editable-cf" class="ro.etss.jira.plugin.tutorial.jira.customfields.AdminEditableCF">
+    <description key="admin-editable-cf.description">It is an jira CF that can be edited only by the administrator!</description>
+    <resource name="view" type="velocity" location="/templates/customfields/admin-editable-cf/view.vm"/>
+    <resource name="edit" type="velocity" location="/templates/customfields/admin-editable-cf/edit.vm"/>
+    <resource name="xml" type="velocity" location="/templates/customfields/admin-editable-cf/view.vm"/> 
   </customfield-type>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Custom Fields ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-  
+ <!-- import from the product container 
+ <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+ -->
+    
 </atlassian-plugin>

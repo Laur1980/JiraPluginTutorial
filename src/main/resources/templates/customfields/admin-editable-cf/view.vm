@@ -1,0 +1,3 @@
+${userName}, this field can be edited only by jira administrators. <br/>
+You have the role of: ${currentUserProjectRole} <br/>
+$!value

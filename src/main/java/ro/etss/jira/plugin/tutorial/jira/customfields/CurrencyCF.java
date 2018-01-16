@@ -10,14 +10,20 @@ import com.atlassian.jira.issue.customfields.impl.FieldValidationException;
 import com.atlassian.jira.issue.customfields.manager.GenericConfigManager;
 import com.atlassian.jira.issue.customfields.persistence.CustomFieldValuePersister;
 import com.atlassian.jira.issue.customfields.persistence.PersistenceFieldType;
+import com.atlassian.jira.issue.fields.TextFieldCharacterLengthValidator;
+import com.atlassian.jira.security.JiraAuthenticationContext;
+import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
+import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 
 import ro.etss.jira.plugin.tutorial.jira.util.Utilities;
-
+@Scanned
 public class CurrencyCF extends AbstractSingleFieldType<BigDecimal> {
+	
 	private static final Logger log = LoggerFactory.getLogger(CurrencyCF.class);
 
-	public CurrencyCF(CustomFieldValuePersister customFieldValuePersister, GenericConfigManager genericConfigManager) {
-		super(customFieldValuePersister, genericConfigManager);
+	public CurrencyCF(@ComponentImport CustomFieldValuePersister customFieldValuePersister, 
+			   		  @ComponentImport GenericConfigManager genericConfigManager) {
+			super(customFieldValuePersister, genericConfigManager);
 	}
 
 	@Override

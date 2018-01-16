@@ -7,3 +7,4 @@
 *.zip
 *.war
 *.ear
+/target/*

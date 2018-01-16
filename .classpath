@@ -69,7 +69,6 @@
 	<classpathentry kind="var" path="M2_REPO/com/atlassian/ofbiz/entityengine-share/1.3.4/entityengine-share-1.3.4.jar" sourcepath="M2_REPO/com/atlassian/ofbiz/entityengine-share/1.3.4/entityengine-share-1.3.4-sources.jar"/>
 	<classpathentry kind="var" path="M2_REPO/xerces/xercesImpl/2.4.0/xercesImpl-2.4.0.jar" sourcepath="M2_REPO/xerces/xercesImpl/2.4.0/xercesImpl-2.4.0-sources.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/atlassian/ofbiz/entityengine/1.3.4/entityengine-1.3.4.jar" sourcepath="M2_REPO/com/atlassian/ofbiz/entityengine/1.3.4/entityengine-1.3.4-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO2/jta/jta/1.0.1/jta-1.0.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/atlassian/collectors/atlassian-collectors-util/1.1/atlassian-collectors-util-1.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/opensymphony/webwork/1.4-atlassian-30/webwork-1.4-atlassian-30.jar" sourcepath="M2_REPO/opensymphony/webwork/1.4-atlassian-30/webwork-1.4-atlassian-30-sources.jar">
 		<attributes>
@@ -441,6 +440,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/usr/share/atlassian-plugin-sdk-6.3.6/repository/jta/jta/1.0.1/jta-1.0.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
