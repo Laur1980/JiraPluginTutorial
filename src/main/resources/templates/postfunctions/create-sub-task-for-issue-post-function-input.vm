@@ -1,24 +1,5 @@
  
-<script>
-	var $ = function(idOrClass){
-		return document.querySelector(idOrClass);
-	};
-	$('#countOfsubtasks').addEventListener('keyup', function(event){
-		console.log('Key was pressed!');
-		var keyCode = ''+event.key;
-		console.log('The value of the keycode: '+keyCode);
-		<!--
-		if(keyCode === 'Enter'){
-			var currentCount = $('#countOfsubtasks').value;
-			console.log('The value of the currentCount: '+currentCount);
-			if(currentCount === null || currentCount.trim().length === 0 || isNaN(currentCount) || Number(currentCount)<=0){
-				$('.errors').innerHTML='It must be a numeric and positive value!';
-				window.stop();
-			}
-		}
-		-->
-	});
-<script>
+
 <tr>
     <td class="fieldLabelArea">
         Number of subtasks:
@@ -28,6 +9,28 @@
 														value="$countOfsubtasks"
 													#end/><br/>   
 													<span class="errors"></span>
+<script>
+	var $ = function(idOrClass){
+		return document.querySelector(idOrClass);
+	};
+	$('#countOfsubtasks').addEventListener('keyup', function(event){
+		console.log('Key was pressed!');
+		let keyCode = event.keyCode;
+		console.log('The value of the keycode: '+keyCode);
+		if(keyCode === 13'){
+			let currentCount = $('#countOfsubtasks').value;
+			console.log('The value of the currentCount: '+currentCount);
+			if(currentCount === null || currentCount.trim().length === 0 || isNaN(currentCount) || Number(currentCount)<=0){
+				$('.errors').innerHTML='It must be a numeric and positive value!';
+				$('#countOfsubtasks').value='';
+				window.stop();
+			}else{
+				console.log("Safe data!");
+			}
+		}
+		
+	});
+</script>
     </td>
 </tr>
 
