@@ -1,4 +1,24 @@
-
+ 
+<script>
+	var $ = function(idOrClass){
+		return document.querySelector(idOrClass);
+	};
+	$('#countOfsubtasks').addEventListener('keyup', function(event){
+		console.log('Key was pressed!');
+		var keyCode = ''+event.key;
+		console.log('The value of the keycode: '+keyCode);
+		<!--
+		if(keyCode === 'Enter'){
+			var currentCount = $('#countOfsubtasks').value;
+			console.log('The value of the currentCount: '+currentCount);
+			if(currentCount === null || currentCount.trim().length === 0 || isNaN(currentCount) || Number(currentCount)<=0){
+				$('.errors').innerHTML='It must be a numeric and positive value!';
+				window.stop();
+			}
+		}
+		-->
+	});
+<script>
 <tr>
     <td class="fieldLabelArea">
         Number of subtasks:
@@ -6,6 +26,8 @@
     <td nowrap>
 		<input type="text" name="countOfsubtasks" id="countOfsubtasks" #if($countOfsubtasks)
 														value="$countOfsubtasks"
-													#end/>   
+													#end/><br/>   
+													<span class="errors"></span>
     </td>
 </tr>
+
