@@ -88,17 +88,44 @@
     <resource name="edit" type="velocity" location="/templates/customfields/currency-cf/edit.vm"/>
     <resource name="xml" type="velocity" location="/templates/customfields/currency-cf/view.vm"/>
   </customfield-type>
-  -->i	
+   
+  <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+  -->
   <!-- Administrator editable only CF -->
-   <customfield-type name="Admin Editable CF" i18n-name-key="admin-editable-cf.name" key="admin-editable-cf" class="ro.etss.jira.plugin.tutorial.jira.customfields.AdminEditableCF">
+  <customfield-type name="Admin Editable CF" i18n-name-key="admin-editable-cf.name" key="admin-editable-cf" class="ro.etss.jira.plugin.tutorial.jira.customfields.AdminEditableCF">
     <description key="admin-editable-cf.description">It is an jira CF that can be edited only by the administrator!</description>
     <resource name="view" type="velocity" location="/templates/customfields/admin-editable-cf/view.vm"/>
     <resource name="edit" type="velocity" location="/templates/customfields/admin-editable-cf/edit.vm"/>
-    <resource name="xml" type="velocity" location="/templates/customfields/admin-editable-cf/view.vm"/> 
+    <resource name="xml" type="velocity" location="/templates/customfields/admin-editable-cf/view.vm"/>
   </customfield-type>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Custom Fields ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
- <!-- import from the product container 
- <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+  <!-- import from the product container 
+ 
  -->
-    
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Web Items ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- Dummy Subtask sections web item 
+  <web-item name="Dummy Link" i18n-name-key="dummy-link.name" key="dummy-link" section="operations-subtasks" weight="1000">
+    <description key="dummy-link.description">A Dummy Link Plugin</description>
+    <label key="dummy-link.label"/>
+    <link linkId="dummy-link-link">/plugins/servlet/project-config/${issue.project.key}</link>
+  </web-item>
+  -->
+  <!-- Create subtask link -->
+  <web-item name="Create sub-task" i18n-name-key="create-subtask.name" key="create-subtask" section="operations-subtasks" weight="100">
+    <description key="create-subtask.description">Create Subtask </description>
+    <label key="create-subtask.label"/>
+    <link linkId="create-subtask-link">/secure/CreateSubTaskIssue!default.jspa?parentIssueId=${issue.id}</link>
+    <condition class="ro.etss.jira.plugin.tutorial.jira.condition.ShouldDisplaySubtaskOperations"/>
+    <tooltip>It creates a sutask for the current issue!</tooltip>
+  </web-item>
+  <!-- Convert to subtask link -->
+  <web-item name="Convert to sub-task" i18n-name-key="converttosub--task.name" key="converttosub--task" section="operations-subtasks" weight="110">
+    <description key="converttosub--task.description">It converts current issue to sub-task</description>
+    <label key="converttosub--task.label"></label>
+    <link linkId="converttosub--task-link">/secure/ConvertIssue.jspa?id=${issue.id}</link>
+    <condition class="ro.etss.jira.plugin.tutorial.jira.condition.ShouldDisplaySubtaskOperations"/>
+    <tooltip>It converts current issue to sub-task</tooltip>
+  </web-item>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ Web Items ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  
 </atlassian-plugin>

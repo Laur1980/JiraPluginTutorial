@@ -67,5 +67,7 @@ public class CurrencyCF extends AbstractSingleFieldType<BigDecimal> {
 	protected BigDecimal getObjectFromDbValue(Object arg0) throws FieldValidationException {
 		return getSingularObjectFromString(arg0.toString());
 	}
+	
+	
 
 }
